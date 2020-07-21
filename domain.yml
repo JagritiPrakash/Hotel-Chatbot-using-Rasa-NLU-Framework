@@ -1,0 +1,145 @@
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - mood_great
+  - mood_unhappy
+  - bot_challenge
+  - book_rooms
+  - no_of_rooms
+  - simple_type
+  - deluxe_type
+  - clean_room
+  - now
+  - inform
+  - faq_breakfast_availability
+  - Restaurant
+  - Restaurant_timings
+  - faq_cancellationpolicy
+  - faq_check_in
+  - faq_checkout
+  - faq_breakfasttime
+  - faq_cancel_reservation
+  
+entities:
+  - number
+  - facility_type
+  - facility_type1
+  - timing
+
+slots:
+  number:
+    type: categorical
+    values:
+    - one
+    - two
+    - three
+    - four
+    
+  facility_type:
+    type: text
+    
+  facility_type1:
+     type: text
+     
+  timing:
+     type: text   
+    
+actions:
+  - utter_greet
+  - utter_ask_number
+  - utter_type
+  - utter_sd
+  - utter_dd
+  - utter_clean
+  - utter_time
+  - utter_schedule
+  - utter_checkin
+  - utter_checkout
+  - utter_bfa
+  - utter_bft
+  - utter_cr
+  - utter_cp  
+  - utter_res
+  - utter_restt 
+  - utter_goodbye
+  
+      
+responses:
+  utter_greet:
+  - text: "Hey! I'm the trail chatbot created by Jagriti for the LimeChat assignment. How may I help you?"
+
+  utter_ask_number:
+  - text: "How many rooms would you like to book?"
+    
+      
+  utter_type:
+  - text: "What type of room would you want to book?"
+    buttons:
+    - title: "Simple"
+      payload: "/simple_type"
+    - title: "Deluxe"
+      payload: "/deluxe_type"
+  
+  utter_sd:
+  - text: "You have chosen to book {number} simple rooms"
+  
+  utter_dd:
+  - text: "You have chosen to book {number} Deluxe rooms"
+  
+  utter_time:
+  - text: "When should I arrange for a cleaning?"
+  
+  utter_schedule:
+  - text: "Sure, I will send someone to your room right away."
+  
+  utter_clean:
+  - text: "I have scheduled cleaning of your room at your desired time"
+  
+  utter_checkin:
+  - text: " Check-in time starts at 4 PM. Minimum check-in age is 21. Please contact the reception for early check-in requests."
+  
+  utter_checkout:
+  - text: "Check-out time is 11 AM. Please contact the reception for late checkout requests."
+  
+  utter_bfa:
+  - text: "The hotel provides its guests with a free made-to-order breakfast each morning."
+  
+  utter_bft:
+  - text: "Monday through Friday breakfast is 6 am to 9 am. On Saturday and Sunday, we are open from 7 am to 10:30 am." 
+  
+  utter_cr:
+  - text: "To cancel a reservation, select the “Reservations” link from the homepage. On the Reservations page, under the heading ‘View, Change or Cancel a Reservation,’ enter your confirmation number, and either the last name on the reservation or the last four digits of the credit card used to make the reservation."
+  
+  utter_cp:
+  - text: "The booking deposit is refundable if the cancellation occurs at least 15 days before arrival. For cancellations made after this limit, a penalty will be imposed based on the cancellation policy."
+  
+  utter_res:
+  - text: "Yes, the hotel has a restaurant called the Zephyr Bar. With our menu we strive to reflect the historic art and the spirit of our neighborhood by offering a glimpse into what makes our area unique."
+  
+  utter_restt:
+  - text: "Our restaurant serves a dazzling 24-hour menu."
+ 
+  utter_goodbye:
+  - text: "Bye, Have a good day!"
+
+
+  utter_cheer_up:
+  - text: "Here is something to cheer you up:"
+    image: "https://i.imgur.com/nGF1K8f.jpg"
+
+  utter_did_that_help:
+  - text: "Did that help you?"
+
+  utter_happy:
+  - text: "Great, carry on!"
+
+  utter_iamabot:
+  - text: "I am a bot, powered by Rasa."
+  
+  
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
